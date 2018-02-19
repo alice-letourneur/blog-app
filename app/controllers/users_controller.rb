@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
-
+  before_action :set_user, only: [:edit, :update, :show]
+  def show
+  end
   def new
     @user = User.new
   end
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the blog app #{@user.username}!"
-      redirect_to articles_path
+      redirect_to user_path(@user)
     else
       render 'new'
       # or # render :new
