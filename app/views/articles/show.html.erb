@@ -1,6 +1,22 @@
 <div class="jumbotron pages">
   <h2 align="center"><%= @article.title %></h2>
   <hr>
+  <% if @article.user %>
+    <div class="row center">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <p>Created by:</p>
+        <div>
+          <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+        </div>
+        <div class="article-title">
+          <%= link_to @article.user.username, user_path(@article.user) %>
+        </div>
+        <div class="article-body">
+            <small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <div>
     <p><%= simple_format(@article.description) %></p>
   </div>
