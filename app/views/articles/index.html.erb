@@ -1,4 +1,10 @@
 <div class="jumbotron pages">
   <h2 align="center">All articles</h2>
+  <div align="center">
+    <%= will_paginate %>
+  </div>
   <%= render 'article', obj: @articles %>
+  <div align="center">
+    <%= will_paginate %>
+  </div>
 </div>

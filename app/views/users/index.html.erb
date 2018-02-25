@@ -1,6 +1,7 @@
 <div class="jumbotron pages">
   <h2 align="center">The bloggers</h2>
   <div align="center">
+    <%= will_paginate %>
     <% @users.each do |user|%>
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
@@ -18,5 +19,6 @@
         </div>
       </div>
     <% end %>
+    <%= will_paginate %>
   </div>
 </div>
