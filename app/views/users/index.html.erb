@@ -15,6 +15,11 @@
             <div class="article-body">
                 <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
             </div>
+            <div class="user-actions">
+              <% if logged_in? and current_user.admin? %>
+                <%= link_to "Delete user", user_path(user), method: :delete, data: {confirm:"Are you sure? By deleting this user you will also delete all the articles created by this user."}, class: "btn btn-xs btn-danger" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
