@@ -1,0 +1,18 @@
+<div class="jumbotron pages">
+  <h2 align="center">List of categories</h2>
+  <div align="center">
+    <%= will_paginate %>
+    <% @categories.each do |category|%>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="well well-lg">
+            <div class="item-title">
+              <%= link_to category.name, category_path(category) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= will_paginate %>
+  </div>
+</div>

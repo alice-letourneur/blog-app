@@ -33,7 +33,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails'
-
+gem 'minitest', '5.10.3'
+gem 'rails-controller-testing'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

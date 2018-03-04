@@ -9,10 +9,10 @@
             <div>
               <%= link_to gravatar_for(user), user_path(user) %>
             </div>
-            <div class="article-title">
+            <div class="item-title">
               <%= link_to user.username, user_path(user) %>
             </div>
-            <div class="article-body">
+            <div class="item-body">
                 <small><%= pluralize(user.articles.count, "article") if user.articles %></small>
             </div>
             <div class="user-actions">
