@@ -1,0 +1,22 @@
+<div class="jumbotron pages">
+  <h2 align="center">Category: <%= @category.name.capitalize %></h2>
+  <% if logged_in? and current_user.admin? %>
+  <div align="center" class="row">
+    <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-xs btn-primary" %>
+  </div>
+  <% end %>
+  <hr>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 center">
+        <%= will_paginate @category_articles %>
+    </div>
+  </div>
+  <div>
+    <%= render '/articles/article', obj: @category_articles %>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 center">
+        <%= will_paginate @category_articles %>
+    </div>
+  </div>
+</div>

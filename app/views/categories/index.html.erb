@@ -9,6 +9,9 @@
             <div class="item-title">
               <%= link_to category.name, category_path(category) %>
             </div>
+            <div>
+                <small><%= pluralize(category.articles.count, "article") if category.articles %></small>
+            </div>
           </div>
         </div>
       </div>
